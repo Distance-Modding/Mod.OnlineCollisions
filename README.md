@@ -1,16 +1,9 @@
-# Distance mod template
+# Online Collisions
 
-Use this repository as a base to create your own Distance mods.
+Ever wondered how it would feel if multiplayer had collisions? Now you know!
 
-# Using the template
-On github, click the `Use this template` button to create a new repository based on this one
+Collisions are entirely client side, so players who don't have the mod won't experience your collisions! They'll be solid walls that don't even react to you.
+It is highly recommend you hold grip at the start of each level!
+Also I have not seen how this mod acts when multiple people are using it. Hopefully it's okay.
 
-Once the repository is created, be sure to clone it locally **with submodules**:
-```sh
-git clone --recurse-submodules -j8 <your project .git url>
-```
-
-# Setting up the project
-After cloning the repository on your local drive, run the [setup.ps1](setup.ps1) script using [PowerShell 7 or higher](https://github.com/PowerShell/PowerShell#get-powershell).
-
-This script will rename the files correctly and replace their content to match your mod name.
+When you have collisions toggled on you will disable leaderboard uploads no matter if you are online or offline!
