@@ -1,0 +1,14 @@
+﻿{
+  "FriendlyName": "Distance Online Collisions",
+  "Author": "Tribow",
+  "Contact": "Discord: Tribow#5673 Steam: Tribow",
+  "ModuleFileName": "Distance.OnlineCollisions.dll",
+  "Dependencies": [],
+  "RequiredGSLs": [
+    "com.github.reherc/Centrifuge.Distance"
+  ],
+  "SkipLoad": false,
+  "Priority": 10
+}
+
+
