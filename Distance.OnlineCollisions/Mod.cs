@@ -24,6 +24,8 @@ namespace Distance.OnlineCollisions
 
         public ConfigLogic Config { get; private set; }
 
+        public bool UploadScore { get; set; }
+
         /// <summary>
         /// Method called as soon as the mod is loaded.
         /// WARNING:	Do not load asset bundles/textures in this function
@@ -41,6 +43,12 @@ namespace Distance.OnlineCollisions
 			Manager = manager;
 
             Config = gameObject.AddComponent<ConfigLogic>();
+
+            //By default this should be true
+            UploadScore = true;
+
+            //Subcribe to config event
+            Config.OnChanged += OnConfigChanged;
 
             // Create a log file
             Logger = LogManager.GetForCurrentAssembly();
@@ -71,6 +79,13 @@ namespace Distance.OnlineCollisions
             };
 
             Menus.AddNew(MenuDisplayMode.Both, settingsMenu, "ONLINE COLLISIONS", "Settings for the Online Collisions mod");
+        }
+
+        public void OnConfigChanged(ConfigLogic config)
+        {
+            //If at any point collision is turned on, disable leaderboard upload
+            if (config.EnableCollision)
+                UploadScore = false;
         }
     }
 }
