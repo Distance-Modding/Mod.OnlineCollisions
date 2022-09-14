@@ -44,8 +44,8 @@ namespace Distance.OnlineCollisions
 
             Config = gameObject.AddComponent<ConfigLogic>();
 
-            //By default this should be true
-            UploadScore = true;
+            //Check whether or not leaderboard uploads can happen
+            OnConfigChanged(Config);
 
             //Subcribe to config event
             Config.OnChanged += OnConfigChanged;
