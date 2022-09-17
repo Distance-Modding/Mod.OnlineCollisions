@@ -10,17 +10,17 @@ using UnityEngine;
 
 namespace Distance.OnlineCollisions
 {
-	/// <summary>
-	/// The mod's main class containing its entry point
-	/// </summary>
-	[ModEntryPoint("Online Collisions")]
-	public sealed class Mod : MonoBehaviour
-	{
-		public static Mod Instance { get; private set; }
+    /// <summary>
+    /// The mod's main class containing its entry point
+    /// </summary>
+    [ModEntryPoint("Online Collisions")]
+    public sealed class Mod : MonoBehaviour
+    {
+        public static Mod Instance { get; private set; }
 
-		public IManager Manager { get; private set; }
+        public IManager Manager { get; private set; }
 
-		public Log Logger { get; private set; }
+        public Log Logger { get; private set; }
 
         public ConfigLogic Config { get; private set; }
 
@@ -86,6 +86,17 @@ namespace Distance.OnlineCollisions
             //If at any point collision is turned on, disable leaderboard upload
             if (config.EnableCollision)
                 UploadScore = false;
+        }
+
+        public void DisplayCollider(MeshCollider collider, LineRenderer line)
+        {
+            line.numPositions = collider.sharedMesh.vertexCount;
+            Vector3[] positions = new Vector3[collider.sharedMesh.vertexCount];
+            for(int i = 0; i < positions.Length; i++)
+            {
+                positions[i] = collider.sharedMesh.vertices[i];
+            }
+            line.SetPositions(positions);
         }
     }
 }

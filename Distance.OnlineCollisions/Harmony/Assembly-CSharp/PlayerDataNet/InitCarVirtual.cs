@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using System;
 
 namespace Distance.OnlineCollisions.Harmony
 {
@@ -12,15 +11,8 @@ namespace Distance.OnlineCollisions.Harmony
         {
             if (Mod.Instance.Config.EnableCollision)
             {
-                try
-                {
-                    __instance.Car_.SetLayerRecursively(Layers.CollidesWithCars);
-                }
-                catch (Exception e)
-                {
-                    Mod.Instance.Logger.Debug(e);
-                    Mod.Instance.Logger.Debug("Failed to set layers to collides with cars");
-                }
+                __instance.SetAllColliderLayers(Layers.Default);
+                
             }
         }
     }

@@ -90,6 +90,7 @@
     <Compile Include="ConfigLogic.cs" />
     <Compile Include="Harmony\Assembly-CSharp\GameMode\UploadScoreAndReplay.cs" />
     <Compile Include="Harmony\Assembly-CSharp\PlayerDataNet\InitCarVirtual.cs" />
+    <Compile Include="Harmony\Assembly-CSharp\PlayerDataNet\LateUpdate.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
